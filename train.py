@@ -24,6 +24,7 @@ decoder_dim = 512  # dimension of decoder RNN
 dropout = 0.3
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # sets device for model and PyTorch tensors
 cudnn.benchmark = True  # set to true only if inputs to model are fixed size; otherwise lot of computational overhead
+# testing git commit
 
 # Training parameters
 start_epoch = 0
