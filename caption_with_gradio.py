@@ -13,7 +13,7 @@ import imageio
 # device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # OUTPUT DIRECTORY TO STORE THE ATTENTION MECHANISM IMAGES
-output_dir = 'D:/Image-to-Caption-Final/uploaded_images_with_attention'
+output_dir = 'C:/Image-to-Caption-100/uploaded_images_with_attention'
 
 def caption_image_beam_search(encoder, decoder, image_path, word_map, beam_size=3):
     """
@@ -258,16 +258,16 @@ import gradio as gr
 def generate_caption_with_gradio(image):
     # Generate a unique filename for the uploaded image
     image_filename = 'uploaded_image_' + datetime.datetime.now().strftime('%Y%m%d%H%M%S') + '.jpg'
-    image_path = os.path.join('D:/Image-to-Caption-Final/', image_filename)
+    image_path = os.path.join('C:/Image-to-Caption-100/uploaded_images', image_filename)
     
     # Save the uploaded image
     image.save(image_path)
 
     # Load the model
-    checkpoint = torch.load('D:/Image-to-Caption-Final/BEST_checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar', map_location='cpu')
+    checkpoint = torch.load('C:/Image-to-Caption-100/BEST_checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar', map_location='cpu')
 
     # Load the word ma
-    with open('D:/Image-to-Caption-Final/Flickr8k_preprocessed/WORDMAP_flickr8k_5_cap_per_img_5_min_word_freq.json', 'r') as j:
+    with open('C:/Image-to-Caption-100/Flickr8k_preprocessed/WORDMAP_flickr8k_5_cap_per_img_5_min_word_freq.json', 'r') as j:
         word_map = json.load(j)
 
     # Construct the model

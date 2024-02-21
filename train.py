@@ -24,7 +24,7 @@ decoder_dim = 512  # dimension of decoder RNN
 dropout = 0.3
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")  # sets device for model and PyTorch tensors
 cudnn.benchmark = True  # set to true only if inputs to model are fixed size; otherwise lot of computational overhead
-# testing git commit
+
 
 # Training parameters
 start_epoch = 0
@@ -50,7 +50,7 @@ def main():
     Training and validation.
     """
     global best_meteor, epochs_since_improvement, checkpoint, start_epoch, fine_tune_encoder, data_name, word_map, train_losses, validation_metrics
-    # checkpoint = 'D:/Image-to-Caption-Final/checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar' 
+    checkpoint = 'C:/Image-to-Caption-100/BEST_checkpoint_flickr8k_5_cap_per_img_5_min_word_freq.pth.tar' 
     
     # Read word map
     word_map_file = os.path.join(data_folder, 'WORDMAP_' + data_name + '.json')
